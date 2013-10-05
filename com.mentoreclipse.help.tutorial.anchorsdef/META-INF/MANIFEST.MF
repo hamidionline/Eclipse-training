@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Help plugin Withanchors
+Bundle-SymbolicName: com.mentoreclipse.help.tutorial.anchorsdef;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.mentoreclipse.help.tutorial.withanchors.Activator
+Bundle-Vendor: MENTORECLIPSE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.help;bundle-version="3.5.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

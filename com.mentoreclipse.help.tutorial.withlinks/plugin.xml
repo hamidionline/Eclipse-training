@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc/mainToc.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="toc/child1Toc.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="toc/child2Toc.xml"
+            primary="false">
+      </toc>
+   </extension>
+
+</plugin>

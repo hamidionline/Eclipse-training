@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.mentoreclipse.command.tutorial.keybindingwithcontext.category"
+            name="My Command Category">
+      </category>
+      <command
+            categoryId="com.mentoreclipse.command.tutorial.keybindingwithcontext.category"
+            id="com.mentoreclipse.command.tutorial.keybindingwithcontext.command"
+            name="Key Binding with context command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.mentoreclipse.command.tutorial.keybindingwithcontext.handlers.HelloWorldCmdHandler"
+            commandId="com.mentoreclipse.command.tutorial.keybindingwithcontext.command">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.mentoreclipse.command.tutorial.keybindingwithcontext.toolbar3">
+            <command
+                  commandId="com.mentoreclipse.command.tutorial.keybindingwithcontext.command"
+                  icon="icons/cmd.gif"
+                  label="Key binding with Context"
+                  style="push"
+                  tooltip="Key Binding with context">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <scheme
+            id="com.mentoreclipse.command.tutorial.keybindingwithcontext.scheme"
+            name="My Keybinding scheme">
+      </scheme>
+      <key
+            commandId="com.mentoreclipse.command.tutorial.keybindingwithcontext.command"
+            contextId="com.mentoreclipse.command.tutorial.keybindingwithcontext.context"
+            schemeId="com.mentoreclipse.command.tutorial.keybindingwithcontext.scheme"
+            sequence="M1+1">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.contexts">
+      <context
+            id="com.mentoreclipse.command.tutorial.keybindingwithcontext.context"
+            name="My Key binding context">
+      </context>
+   </extension>
+
+</plugin>

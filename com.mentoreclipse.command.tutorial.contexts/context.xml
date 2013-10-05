@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="Mail" title="Mail">
+      <description>Mail Context Desc</description>
+      <topic href="contexts/topic1.html" label="Topic1"/>
+      <topic href="context/topic2.html" label="Topic2"/>
+   </context>
+</contexts>

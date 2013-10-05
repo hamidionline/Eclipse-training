@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="Test_Action_Context" title="Test Action Help">
+      <description>The Test Action when executed shows a simple Message Dialog....</description>
+      <topic href="contexts/test.html" label="Topic 1"/>
+      <topic href="contexts/test.html" label="Topic 2"/>
+   </context>
+</contexts>

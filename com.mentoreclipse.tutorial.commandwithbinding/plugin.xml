@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="com.mentoreclipse.tutorial.pageselection.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="com.mentoreclipse.tutorial.pageselection.commands.category"
+            id="com.mentoreclipse.tutorial.pageselection.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.mentoreclipse.tutorial.pageselection.commands.sampleCommand"
+            class="com.mentoreclipse.tutorial.pageselection.handlers.SampleHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.mentoreclipse.tutorial.pageselection.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Sample Menu"
+               mnemonic="M"
+               id="com.mentoreclipse.tutorial.pageselection.menus.sampleMenu">
+            <command
+                  commandId="com.mentoreclipse.tutorial.pageselection.commands.sampleCommand"
+                  mnemonic="S"
+                  id="com.mentoreclipse.tutorial.pageselection.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.mentoreclipse.tutorial.pageselection.toolbars.sampleToolbar">
+            <command
+                  commandId="com.mentoreclipse.tutorial.pageselection.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Say hello world"
+                  id="com.mentoreclipse.tutorial.pageselection.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

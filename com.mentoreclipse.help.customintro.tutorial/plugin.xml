@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.mentoreclipse.help.customintro.tutorial.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.mentoreclipse.help.customintro.tutorial.Perspective"
+            id="com.mentoreclipse.help.customintro.tutorial.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Message"
+            allowMultiple="true"
+            icon="icons/sample2.gif"
+            class="com.mentoreclipse.help.customintro.tutorial.View"
+            id="com.mentoreclipse.help.customintro.tutorial.view">
+      </view>
+      <view
+            name="Mailboxes"
+            allowMultiple="true"
+            icon="icons/sample3.gif"
+            class="com.mentoreclipse.help.customintro.tutorial.NavigationView"
+            id="com.mentoreclipse.help.customintro.tutorial.navigationView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="com.mentoreclipse.help.customintro.tutorial.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="com.mentoreclipse.help.customintro.tutorial.category"
+            id="com.mentoreclipse.help.customintro.tutorial.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="com.mentoreclipse.help.customintro.tutorial.category"
+            id="com.mentoreclipse.help.customintro.tutorial.openMessage">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.mentoreclipse.help.customintro.tutorial.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+2">
+      </key>
+      <key
+            commandId="com.mentoreclipse.help.customintro.tutorial.openMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+3">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+X">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.mentoreclipse.help.customintro.tutorial.application"
+            name="RCP Product">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/sample2.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+         <property
+               name="appName"
+               value="RCP Product">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            icon="icons/intro.gif"
+            id="com.mentoreclipse.help.customintro.tutorial.intro"
+            label="Custom Mail Intro">
+      </intro>
+      <introProductBinding
+            introId="com.mentoreclipse.help.customintro.tutorial.intro"
+            productId="com.mentoreclipse.help.customintro.tutorial.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="content.xml"
+            id="com.mentoreclipse.help.customintro.tutorial.config"
+            introId="com.mentoreclipse.help.customintro.tutorial.intro">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+
+</plugin>

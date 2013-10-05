@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Category for Hello World Commands"
+            id="Hello_World_Command_Category"
+            name="Hello World Category">
+      </category>
+      <command
+            categoryId="Hello_World_Command_Category"
+            description="Hello World Command"
+            id="Hello_Command"
+            name=" Hello Command">
+      </command>
+      <command
+            categoryId="Hello_World_Command_Category"
+            description="Hello World Command 2"
+            id="Hello_Command_2"
+            name="Hello Command 2">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.mentoreclipse.tutorial.command.impl.HelloWorldCommand"
+            commandId="Hello_Command">
+      </handler>
+      <handler
+            class="com.mentoreclipse.tutorial.command.impl.HelloWorldCommand"
+            commandId="Hello_Command_2">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false">
+                  <instanceof
+                        value="org.eclipse.jdt.core.ICompilationUnit">
+                  </instanceof>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=window">
+         <menu
+               id="Hello_Menu"
+               label="Hello Menu">
+            <command
+                  commandId="Hello_Command"
+                  id="Hello_Command_In_Menu"
+                  label="Hello Command in Menu"
+                  mnemonic="H"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:help?after=intro">
+         <menu
+               icon="icons/redsquare.gif"
+               id="Hello_Menu_In_Help"
+               label="Hello Menu in Help">
+            <command
+                  commandId="Hello_Command"
+                  id="Hello_Command_In_Help_Menu"
+                  label="Hello Command in Help Menu"
+                  mnemonic="H"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:shortcuts?after=showQuickAccess">
+         <menu
+               icon="icons/redsquare.gif"
+               id="Hello_Menu_In_Window_Navigate"
+               label="Hello Menu in Window navigate">
+            <command
+                  commandId="Hello_Command"
+                  id="Hello_Command_In_Window_Navigate_Menu"
+                  label="Hello Command in Windiow Navigate Menu"
+                  mnemonic="H"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="Hello_World_Toolbar"
+               label="Hello Toolbar">
+            <command
+                  commandId="Hello_Command"
+                  id="Hello_Command_In_ToolBar"
+                  label="Hello Command in ToolBar"
+                  mnemonic="H"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.workbench.file?after=print">
+         <command
+               commandId="Hello_Command"
+               id="Hello_Command_In_File_ToolBar"
+               label="Hello Command in File ToolBar"
+               mnemonic="H"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="Hello_World_Toolbar_2"
+               label="Hello World Toolbar 2">
+            <command
+                  commandId="Hello_Command_2"
+                  icon="icons/bulb.gif"
+                  label="Hello Command 2"
+                  style="push"
+                  tooltip="Hello World Command 2">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="Hello_Command"
+            hoverIcon="icons/redsquare.gif"
+            icon="icons/redsquare.gif">
+      </image>
+      <image
+            commandId="Hello_Command_2"
+            icon="icons/bulb.gif">
+      </image>
+   </extension>
+
+</plugin>

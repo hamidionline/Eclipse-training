@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="Child2" topic="html/main_child2.html">
+   <topic href="html/main_child2.html" label="Child 2">
+      <topic href="html/main_child2_1.html" label="Child2_1">
+      </topic>
+      <topic href="html/main_child2_2.html" label="Child2_2">
+      </topic>
+   </topic>
+</toc>

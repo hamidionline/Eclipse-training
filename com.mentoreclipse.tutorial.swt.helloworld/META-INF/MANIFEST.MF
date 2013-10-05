@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Helloworld SWT Plug-in
+Bundle-SymbolicName: com.mentoreclipse.tutorial.swt.helloworld
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.mentoreclipse.tutorial.swt.helloworld.Activator
+Bundle-Vendor: MEMTORECLIPSE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

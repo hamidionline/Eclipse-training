@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Category defining all the Hello World command contributions"
+            id="com.mentoreclipse.command.tutorial.adv.hwcategory"
+            name="Hello World Command Category">
+      </category>
+      <command
+            categoryId="com.mentoreclipse.command.tutorial.adv.hwcategory"
+            description="Command when executed shows a Hello World Dialog"
+            id="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+            name="Hello World Command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.mentoreclipse.command.tutorial.adv.handlers.HelloWorldCmdHandler"
+            commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd">
+      </handler>
+   </extension>
+   <extension
+         name="Existing Menu and toolbar"
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:file?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:file?before=new.ext">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:new?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.workbench.file?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.workbench.file?after=newWizardDropDown">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=export">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.CompilationUnitEditor.EditorContext?after=additions">
+         <command
+               commandId="com.mentoreclipse.command.tutorial.adv.helloworldcmd"
+               icon="icons/cmd.gif"
+               id="com.mentoreclipse.command.tutorial.adv.helloworldcmd.id"
+               label="Hello World Cmd"
+               style="push"
+               tooltip="Command when executed shows Hello World Dialog">
+         </command>
+      </menuContribution>
+   </extension>
+</plugin>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Command Investigation Plug-in
+Bundle-SymbolicName: com.mentoreclipse.commands.investigation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.mentoreclipse.commands.investigation.CommandPlugin
+Bundle-Vendor: MENTORECLIPSE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.7.100",
+ org.eclipse.help;bundle-version="3.5.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin

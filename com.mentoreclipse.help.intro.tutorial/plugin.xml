@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.mentoreclipse.help.intro.tutorial.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.mentoreclipse.help.intro.tutorial.Perspective"
+            id="com.mentoreclipse.help.intro.tutorial.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Message"
+            allowMultiple="true"
+            icon="icons/sample2.gif"
+            class="com.mentoreclipse.help.intro.tutorial.View"
+            id="com.mentoreclipse.help.intro.tutorial.view">
+      </view>
+      <view
+            name="Mailboxes"
+            allowMultiple="true"
+            icon="icons/sample3.gif"
+            class="com.mentoreclipse.help.intro.tutorial.NavigationView"
+            id="com.mentoreclipse.help.intro.tutorial.navigationView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="com.mentoreclipse.help.intro.tutorial.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="com.mentoreclipse.help.intro.tutorial.category"
+            id="com.mentoreclipse.help.intro.tutorial.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="com.mentoreclipse.help.intro.tutorial.category"
+            id="com.mentoreclipse.help.intro.tutorial.openMessage">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.mentoreclipse.help.intro.tutorial.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+2">
+      </key>
+      <key
+            commandId="com.mentoreclipse.help.intro.tutorial.openMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+3">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+X">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.mentoreclipse.help.intro.tutorial.application"
+            name="RCP Product">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/sample2.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+         <property
+               name="appName"
+               value="RCP Product">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="com.mentoreclipse.help.intro.tutorial.MailIntor"
+            icon="icons/intro.gif"
+            id="com.mentoreclipse.help.intro.tutorial.intro"
+            label="Welcome to MyMail">
+      </intro>
+      <introProductBinding
+            introId="com.mentoreclipse.help.intro.tutorial.intro"
+            productId="com.mentoreclipse.help.intro.tutorial.product">
+      </introProductBinding>
+   </extension>
+
+</plugin>

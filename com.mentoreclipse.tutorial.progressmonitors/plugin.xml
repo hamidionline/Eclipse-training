@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="Mentor_Eclipse_Category"
+            name="Mentor Eclipse">
+      </category>
+      <view
+            category="Mentor_Eclipse_Category"
+            class="com.mentoreclipse.tutorial.progressmonitors.MEJobsView"
+            id="Eclipse_Jobs_Demo"
+            name="Eclipse Jobs"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>

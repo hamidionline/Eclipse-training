@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="%command.category.desc"
+            id="com.mentoreclipse.commands.investigation.cmd.cat.test"
+            name="%command.category.name">
+      </category>
+      <command
+            categoryId="com.mentoreclipse.commands.investigation.cmd.cat.test"
+            description="Test Command"
+            helpContextId="com.mentoreclipse.commands.investigation.help.Test_Action_Context"
+            id="com.mentoreclipse.commands.investigation.command.test"
+            name="Test Command">
+      </command>
+      <command
+            categoryId="com.mentoreclipse.commands.investigation.cmd.cat.test"
+            description="Test Command 2"
+            helpContextId="com.mentoreclipse.commands.investigation.help.Test_Action_Context"
+            id="com.mentoreclipse.commands.investigation.command.test2"
+            name="Test Command 2">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.mentoreclipse.commands.investigation.handlers.TestHandler"
+            commandId="com.mentoreclipse.commands.investigation.command.test">
+      </handler>
+      <handler
+            class="com.mentoreclipse.commands.investigation.handlers.TestHandler2"
+            commandId="com.mentoreclipse.commands.investigation.command.test2">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Test">
+            <command
+                  commandId="com.mentoreclipse.commands.investigation.command.test"
+                  helpContextId="com.mentoreclipse.commands.investigation.help.Test_Action_Context"
+                  icon="icons/progress_stop.gif"
+                  label="Test Command"
+                  style="push"
+                  tooltip="Test Command">
+            </command>
+            <command
+                  commandId="com.mentoreclipse.commands.investigation.command.test2"
+                  label="Test Command 2"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <scheme
+            id="com.mentoreclipse.commands.investigation.testscheme"
+            name="Test Scheme"
+            parentId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </scheme>
+      <key
+            commandId="com.mentoreclipse.commands.investigation.command.test"
+            contextId="com.mentoreclipse.commands.investigation.context.test"
+            locale="en"
+            platform="win32"
+            schemeId="com.mentoreclipse.commands.investigation.testscheme"
+            sequence="M1+T">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.contexts">
+      <context
+            id="com.mentoreclipse.commands.investigation.context.test"
+            name="Test Context">
+      </context>
+   </extension> 
+
+</plugin>

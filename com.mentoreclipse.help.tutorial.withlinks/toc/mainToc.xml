@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="My Application Doc" topic="html/main.html">
+   <link toc="toc/child1Toc.xml"/>
+   <link toc="toc/child2Toc.xml"/>
+</toc>

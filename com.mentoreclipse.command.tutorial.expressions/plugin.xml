@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.mentoreclipse.command.tutorial.expressions.category"
+            name="Expression Category">
+      </category>
+      <command
+            categoryId="com.mentoreclipse.command.tutorial.expressions.category"
+            id="com.mentoreclipse.command.tutorial.expressions.command"
+            name="Expression command">
+      </command>
+      <command
+            categoryId="com.mentoreclipse.command.tutorial.expressions.category"
+            id="com.mentoreclipse.command.tutorial.expressions.command.two"
+            name="Expression command 2">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.mentoreclipse.command.tutorial.expressions.handlers.HelloWorldCmdHandler"
+            commandId="com.mentoreclipse.command.tutorial.expressions.command">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <instanceof
+                        value="org.eclipse.core.resources.IFile">
+                  </instanceof>
+               </iterate>
+            </with></enabledWhen>
+      </handler>
+      <handler
+            class="com.mentoreclipse.command.tutorial.expressions.handlers.HelloWorldCmdHandler"
+            commandId="com.mentoreclipse.command.tutorial.expressions.command.two">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <instanceof
+                        value="org.eclipse.core.resources.IResource">
+                  </instanceof>
+                  <adapt
+                        type="org.eclipse.core.resources.IResource">
+                  </adapt>
+                  <test
+                        property="org.eclipse.core.resources.name"
+                        value="*.java">
+                  </test></iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.mentoreclipse.command.tutorial.expressions.toolbar">
+            <command
+                  commandId="com.mentoreclipse.command.tutorial.expressions.command"
+                  icon="icons/cmd.gif"
+                  id="com.mentoreclipse.command.tutorial.expressions.command.id"
+                  label="Expression command"
+                  style="push">
+            </command>
+            <command
+                  commandId="com.mentoreclipse.command.tutorial.expressions.command.two"
+                  icon="icons/cmd2.gif"
+                  id="com.mentoreclipse.command.tutorial.expressions.command.id2"
+                  label="Expression command 2"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

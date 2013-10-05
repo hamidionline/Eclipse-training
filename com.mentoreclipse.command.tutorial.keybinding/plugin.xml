@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.mentoreclipse.command.tutorial.keybinding.command"
+            name="Command With Key Binding">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.mentoreclipse.command.tutorial.keybinding.toolbar"
+               label="Key Binding command toolbar">
+            <command
+                  commandId="com.mentoreclipse.command.tutorial.keybinding.command"
+                  icon="icons/cmd.gif"
+                  label="Command with Key Binding"
+                  style="push"
+                  tooltip="Command with key binding">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.mentoreclipse.command.tutorial.keybinding.hanlder.HelloWorldCmdHandler"
+            commandId="com.mentoreclipse.command.tutorial.keybinding.command">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.mentoreclipse.command.tutorial.keybinding.command"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+1">
+      </key>
+   </extension>
+
+</plugin>
